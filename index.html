@@ -1,7 +1,18 @@
 <!DOCTYPE HTML>
 <head>
     <link rel="stylesheet" href="css/termproject.css">
+    <link rel="stylesheet" href="css/flipclock.css">
+    <script src="/assets/js/libs/jquery.js"></script>
+    <script src="/assets/js/flipclock/flipclock.min.js"></script>
 </head>
 <body>
-    WHOA FIRST COMMIT WHAT IS THIS EVEN
+    We're almost there.  Time left:
+    <div id=".clock"> </div>
+    <script>
+     var clock = new FlipClock($('.clock'), 100, {
+         // Create a day counter
+         clockFace: 'DailyCounter',
+         countdown: true,
+         });
+    </script>
 </body>
