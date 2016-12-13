@@ -9,7 +9,8 @@
     I miss you.
     <div class="clock"> </div>
     <script type="text/javascript">
-     var endTime = new Date('January 2, 2017 13:00:00'); // woo hardcoding ftw
+     var endTime = new Date(Date.UTC(2017, 1, 2, 22, 0, 0)); // woo hardcoding ftw
+     /* new Date(Date.UTC(year, month, day, hour, minute, second))*/
      var timeNow = new Date();
      var timeDifference = endTime.getTime() / 1000 - timeNow.getTime() / 1000;
 
