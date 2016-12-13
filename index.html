@@ -15,7 +15,7 @@
          /* new Date(Date.UTC(year, month, day, hour))*/
          var timeNow = new Date();
          var timeDifference = endTime.getTime() / 1000 - timeNow.getTime() / 1000;
-         document.innerHTML("clock") = "";
+         document.getElementById("clock").innerHTML = "";
          clock = new FlipClock($('.clock'), timeDifference, {
              // Create a day counter
              clockFace: 'DailyCounter',
