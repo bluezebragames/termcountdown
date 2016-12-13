@@ -10,7 +10,10 @@
     <div class="clock"> </div>
     <script type="text/javascript">
      var endTime = new Date('January 2, 2017 13:00:00'); // woo hardcoding ftw
-     var clock = new FlipClock($('.clock'), endTime, {
+     var timeNow = new Date();
+     var timeDifference = endTime.getTime() / 1000 - timeNow.getTime() / 1000;
+
+     var clock = new FlipClock($('.clock'), timeDifference, {
          // Create a day counter
          clockFace: 'DailyCounter',
          countdown: true,
