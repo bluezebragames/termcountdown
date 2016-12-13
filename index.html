@@ -7,17 +7,23 @@
 </head>
 <body>
     I miss you.
-    <div class="clock"> </div>
+    <div class="clock" id="clock"> </div>
     <script type="text/javascript">
-     var endTime = new Date(Date.UTC(2017, 0, 2, 22)); // woo hardcoding ftw
-     /* new Date(Date.UTC(year, month, day, hour))*/
-     var timeNow = new Date();
-     var timeDifference = endTime.getTime() / 1000 - timeNow.getTime() / 1000;
-
-     var clock = new FlipClock($('.clock'), timeDifference, {
-         // Create a day counter
-         clockFace: 'DailyCounter',
-         countdown: true,
+     var clock;
+     function createClock() {
+         var endTime = new Date(Date.UTC(2017, 0, 2, 22)); // woo hardcoding ftw
+         /* new Date(Date.UTC(year, month, day, hour))*/
+         var timeNow = new Date();
+         var timeDifference = endTime.getTime() / 1000 - timeNow.getTime() / 1000;
+         document.getInnerHTML("clock") = "";
+         clock = new FlipClock($('.clock'), timeDifference, {
+             // Create a day counter
+             clockFace: 'DailyCounter',
+             countdown: true,
          });
+         window.setTimeout(createClock, 60 * 1000); // best solution ever to prevent desyncs: start a new clock every minute
+     }
+     createClock();
+
     </script>
 </body>
